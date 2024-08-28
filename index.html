@@ -4,6 +4,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -24,81 +25,21 @@
             <div class="border border-black border-5 pt-2 pb-2 ps-3 pe-4">
                 <div class="row">
                     <div class="col col-sm-12 col-md-auto">
-                        <img class="w-100 object-fit-cover" src="img/biglebowski.png" height="350" />
+                        <img class="w-100 object-fit-cover" id="bestFilmPicture" src="" height="350" />
                     </div>
                     <div class="col">
-                        <h3 class="mt-sm-3">The Big Lebowski</h3>
-                        <p>Jeff "The Dude" Lebowski, mistaken for a millionaire of the same name,
-                            seeks restitution for his ruined rug and enlists his bowling buddies to help get it.</p>
-                        <button type="button" class="btn btn-danger btn-lg float-end mt-3">Détails</button>
+                        <h3 class="mt-sm-3" id="bestFilmTitle"></h3>
+                        <p id="bestFilmDesc"></p>
+                        <button type="button" id="bestMovieBtn"
+                            class="btn btn-danger btn-lg float-end mt-3">Détails</button>
                     </div>
                 </div>
             </div>
         </div>
         <div>
-            <h2 class="pt-5">Mystery</h2>
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-md-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-md-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-lg-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-lg-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="pt-5">Films les mieux notés</h2>
+            <div class="container">
+                <div class="row" id="bestMoviesRow">
                 </div>
             </div>
         </div>
@@ -107,158 +48,57 @@
         </div>
 
         <div>
-            <h2 class="pt-5">Catégory 2</h2>
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-md-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-md-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-lg-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-lg-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="pt-5">Mystery</h2>
+            <div class="container">
+                <div class="row" id="firstCategoryRow">
                 </div>
             </div>
         </div>
 
         <div>
-            <h2 class="pt-5">Catégory 3</h2>
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-md-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-md-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-lg-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-lg-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="pt-5">Comedy</h2>
+            <div class="container">
+                <div class="row" id="secondCategoryRow">
                 </div>
             </div>
         </div>
 
         <div class="pt-5">
             <div class="d-flex align-items-center">
-            <h2 class="me-3">Autres</h2>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Catégories
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Films d'action</a></li>
-                  <li><a class="dropdown-item" href="#">Comédies</a></li>
-                  <li><a class="dropdown-item" href="#">Famille</a></li>
-                  <li><a class="dropdown-item" href="#">Films de fantasy</a></li>
-                  <li><a class="dropdown-item" href="#">Films d'horreur</a></li>
-                  <li><a class="dropdown-item" href="#">Science-fiction</a></li>
-                  <li><a class="dropdown-item" href="#">Westerns</a></li>
-                </ul>
-              </div>
+                <h2 class="me-3">Autres</h2>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Catégories
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Adult</a></li>
+                        <li><a class="dropdown-item" href="#">Adventure</a></li>
+                        <li><a class="dropdown-item" href="#">Animation</a></li>
+                        <li><a class="dropdown-item" href="#">Biography</a></li>
+                        <li><a class="dropdown-item" href="#">Comedy</a></li>
+                        <li><a class="dropdown-item" href="#">Crime</a></li>
+                        <li><a class="dropdown-item" href="#">Documentary</a></li>
+                        <li><a class="dropdown-item" href="#">Drama</a></li>
+                        <li><a class="dropdown-item" href="#">Family</a></li>
+                        <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                        <li><a class="dropdown-item" href="#">Film-Noir</a></li>
+                        <li><a class="dropdown-item" href="#">History</a></li>
+                        <li><a class="dropdown-item" href="#">Horror</a></li>
+                        <li><a class="dropdown-item" href="#">Music</a></li>
+                        <li><a class="dropdown-item" href="#">Musical</a></li>
+                        <li><a class="dropdown-item" href="#">Mystery</a></li>
+                        <li><a class="dropdown-item" href="#">News</a></li>
+                        <li><a class="dropdown-item" href="#">Reality-TV</a></li>
+                        <li><a class="dropdown-item" href="#">Romance</a></li>
+                        <li><a class="dropdown-item" href="#">Sci-Fi</a></li>
+                        <li><a class="dropdown-item" href="#">Sport</a></li>
+                        <li><a class="dropdown-item" href="#">Thriller</a></li>
+                        <li><a class="dropdown-item" href="#">War</a></li>
+                        <li><a class="dropdown-item" href="#">Western</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="container mt-5">
                 <div class="row">
@@ -326,23 +166,19 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Launch static backdrop modal
-        </button>
-
         <!-- MODAL WINDOW -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal" id="modal" style="display: none;">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <p>Modal body text goes here.</p>
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" id="close-modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
 
     </div>
     </div>
