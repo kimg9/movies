@@ -26,53 +26,64 @@ updateBestFilm()
 async function updateCategoryFilms(url, id, modalClass) {
     let fiveFilms = await loadFilms(url);
 
-    // FIRST FIVE FILMS
     const row = document.getElementById(id);
     row.innerHTML = '';
-    for (const film of fiveFilms.results) {
-        const div = document.createElement('div');
-        div.className = 'col-sm-12 col-md-6 col-lg-4 mb-4';
-        div.innerHTML = `<div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src=${film.image_url} alt=${film.title}>
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;" id=${film.id}>
-                                <strong class="text-light align-self-center text-center" style="font-size: x-large">${film.title}</strong>
-                                <button type="button" class="${modalClass} btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>`
-        row.appendChild(div);
-    }
-    
-    // SIXTH FILM
-    if (fiveFilms.next !== null) {
-        const followingFiveFilms = await loadFilms(fiveFilms.next);
-        const sixthFilm = followingFiveFilms.results[0];
 
-        const div = document.createElement('div');
+    if (fiveFilms.results.length == 0){
+        const p = document.createElement('p')
+        p.innerHTML = "Oups, désolé. Nous n'avons pas trouvé de résultats pour cette recherche. Veuillez sélectionner une autre catégorie."
+        row.appendChild(p)
+        row.nextSibling.nextSibling.children[0].classList.add("d-none") //Hide "Show More" Button
+    } else {
+        //Un-hide "Show More" Button if needed
+        row.nextSibling.nextSibling.children[0].classList.remove("d-none") 
+
+        // FIRST FIVE FILMS
+        for (const film of fiveFilms.results) {
+            const div = document.createElement('div');
             div.className = 'col-sm-12 col-md-6 col-lg-4 mb-4';
             div.innerHTML = `<div class="position-relative overflow-hidden" style="height: 350px;">
-                                <img class="w-100 h-100 object-fit-cover" src=${sixthFilm.image_url} alt=${sixthFilm.title}>
+                                <img class="w-100 h-100 object-fit-cover" src=${film.image_url} alt=${film.title}>
                                 <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                    style="--bs-bg-opacity: 0.7;" id=${sixthFilm.id}>
-                                    <strong class="text-light align-self-center text-center" style="font-size: x-large">${sixthFilm.title}</strong>
+                                    style="--bs-bg-opacity: 0.6;" id=${film.id}>
+                                    <strong class="text-light align-self-center text-center" style="font-size: x-large">${film.title}</strong>
                                     <button type="button" class="${modalClass} btn btn-sm btn-dark align-self-end">Détails</button>
                                 </div>
                             </div>`
-        row.appendChild(div);
+            row.appendChild(div);
+        }
+
+        // SIXTH FILM
+        if (fiveFilms.next !== null) {
+            const followingFiveFilms = await loadFilms(fiveFilms.next);
+            const sixthFilm = followingFiveFilms.results[0];
+
+            const div = document.createElement('div');
+                div.className = 'col-sm-12 col-md-6 col-lg-4 mb-4';
+                div.innerHTML = `<div class="position-relative overflow-hidden" style="height: 350px;">
+                                    <img class="w-100 h-100 object-fit-cover" src=${sixthFilm.image_url} alt=${sixthFilm.title}>
+                                    <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
+                                        style="--bs-bg-opacity: 0.7;" id=${sixthFilm.id}>
+                                        <strong class="text-light align-self-center text-center" style="font-size: x-large">${sixthFilm.title}</strong>
+                                        <button type="button" class="${modalClass} btn btn-sm btn-dark align-self-end">Détails</button>
+                                    </div>
+                                </div>`
+            row.appendChild(div);
+        }
+
+        const myFilms = Array.from(row.children)
+        myFilms.forEach((film, index) => {
+            if (index == 2 || index == 3){
+                film.classList.add("d-none")
+                film.classList.add("d-md-block")
+            }
+
+            if (index == 4 || index == 5) {
+                film.classList.add("d-none")
+                film.classList.add("d-lg-block")
+            }
+        })
     }
-
-    const myFilms = Array.from(row.children)
-    myFilms.forEach((film, index) => {
-        if (index == 2 || index == 3){
-            film.classList.add("d-none")
-            film.classList.add("d-md-block")
-        }
-
-        if (index == 4 || index == 5) {
-            film.classList.add("d-none")
-            film.classList.add("d-lg-block")
-        }
-    })
 };
 // --------------------------------------------------
 
