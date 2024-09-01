@@ -30,7 +30,7 @@
                     <div class="col">
                         <h3 class="mt-sm-3" id="bestFilmTitle"></h3>
                         <p id="bestFilmDesc"></p>
-                        <button type="button" id="bestMovieBtn"
+                        <button type="button" id="detailsBtn"
                             class="btn btn-danger btn-lg float-end mt-3">Détails</button>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
         </div>
 
         <div>
-            <h2 class="pt-5">Mystery</h2>
+            <h2 class="pt-5">Crime</h2>
             <div class="container">
                 <div class="row" id="firstCategoryRow">
                 </div>
@@ -63,104 +63,47 @@
             </div>
         </div>
 
-        <div class="pt-5">
+        <div class="pt-5 mb-5">
             <div class="d-flex align-items-center">
                 <h2 class="me-3">Autres</h2>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <button onclick="dropdownBtn()" class="btn btn-secondary dropdown-toggle" type="button"
+                        id="category-button">
                         Catégories
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Adult</a></li>
-                        <li><a class="dropdown-item" href="#">Adventure</a></li>
-                        <li><a class="dropdown-item" href="#">Animation</a></li>
-                        <li><a class="dropdown-item" href="#">Biography</a></li>
-                        <li><a class="dropdown-item" href="#">Comedy</a></li>
-                        <li><a class="dropdown-item" href="#">Crime</a></li>
-                        <li><a class="dropdown-item" href="#">Documentary</a></li>
-                        <li><a class="dropdown-item" href="#">Drama</a></li>
-                        <li><a class="dropdown-item" href="#">Family</a></li>
-                        <li><a class="dropdown-item" href="#">Fantasy</a></li>
-                        <li><a class="dropdown-item" href="#">Film-Noir</a></li>
-                        <li><a class="dropdown-item" href="#">History</a></li>
-                        <li><a class="dropdown-item" href="#">Horror</a></li>
-                        <li><a class="dropdown-item" href="#">Music</a></li>
-                        <li><a class="dropdown-item" href="#">Musical</a></li>
-                        <li><a class="dropdown-item" href="#">Mystery</a></li>
-                        <li><a class="dropdown-item" href="#">News</a></li>
-                        <li><a class="dropdown-item" href="#">Reality-TV</a></li>
-                        <li><a class="dropdown-item" href="#">Romance</a></li>
-                        <li><a class="dropdown-item" href="#">Sci-Fi</a></li>
-                        <li><a class="dropdown-item" href="#">Sport</a></li>
-                        <li><a class="dropdown-item" href="#">Thriller</a></li>
-                        <li><a class="dropdown-item" href="#">War</a></li>
-                        <li><a class="dropdown-item" href="#">Western</a></li>
+                    <ul class="dropdown-menu" id="dropdown-menu">
+                        <li><a class="dropdown-item" id="dropdown-default">Action</a></li>
+                        <li><a class="dropdown-item">Adult</a></li>
+                        <li><a class="dropdown-item">Adventure</a></li>
+                        <li><a class="dropdown-item">Animation</a></li>
+                        <li><a class="dropdown-item">Biography</a></li>
+                        <li><a class="dropdown-item">Comedy</a></li>
+                        <li><a class="dropdown-item">Crime</a></li>
+                        <li><a class="dropdown-item">Documentary</a></li>
+                        <li><a class="dropdown-item">Drama</a></li>
+                        <li><a class="dropdown-item">Family</a></li>
+                        <li><a class="dropdown-item">Fantasy</a></li>
+                        <li><a class="dropdown-item">Film-Noir</a></li>
+                        <li><a class="dropdown-item">History</a></li>
+                        <li><a class="dropdown-item">Horror</a></li>
+                        <li><a class="dropdown-item">Music</a></li>
+                        <li><a class="dropdown-item">Musical</a></li>
+                        <li><a class="dropdown-item">Mystery</a></li>
+                        <li><a class="dropdown-item">News</a></li>
+                        <li><a class="dropdown-item">Reality-TV</a></li>
+                        <li><a class="dropdown-item">Romance</a></li>
+                        <li><a class="dropdown-item">Sci-Fi</a></li>
+                        <li><a class="dropdown-item">Sport</a></li>
+                        <li><a class="dropdown-item">Thriller</a></li>
+                        <li><a class="dropdown-item">War</a></li>
+                        <li><a class="dropdown-item">Western</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-md-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-md-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-lg-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-none d-lg-block">
-                        <div class="position-relative overflow-hidden" style="height: 350px;">
-                            <img class="w-100 h-100 object-fit-cover" src="img/biglebowski.png" alt="Titanic">
-                            <div class="position-absolute top-50 start-0 w-100 bg-dark d-flex flex-column p-2"
-                                style="--bs-bg-opacity: 0.6;">
-                                <p class="text-light align-self-center"><strong>The Big Lebowski</strong></p>
-                                <button type="button" class="btn btn-sm btn-dark align-self-end">Détails</button>
-                            </div>
-                        </div>
+
+            <div>
+                <div class="container">
+                    <div class="row" id="selectableCategoryRow">
                     </div>
                 </div>
             </div>
@@ -171,10 +114,26 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
+                        <div class="container">
+                            <div class="d-flex justify-content-between align-items-stretch" id="upperPart">
+                                <div class="d-flex flex-column">
+                                    <h3 id="modalTitle"></h3>
+                                    <p class="p-0 m-0"><strong id="modalFirstLine"></strong></p>
+                                    <p class="p-0 m-0"><strong id="modalSecondLine"></strong></p>
+                                    <p class="p-0 m-0 mb-5"><strong id="modalThirdLine"></strong></p>
+
+                                    <p class = "p-0 m-0 mt-5"><strong>Réalisé par:</strong></p>
+                                    <p id="modalDirectors"></p>
+                                </div>
+                                <img id="modalPicture" src="img/biglebowski.png" width="200"/>
+                            </div>
+                            <p id="modalDescription" class="mt-2"></p>
+                            <p class="p-0 m-0 mt-5"><strong>Avec:</strong></p>
+                            <p id="modalActors"></p>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" id="close-modal">Close</button>
+                        <button type="button" class="btn btn-danger" id="close-modal">Fermer</button>
                     </div>
                 </div>
             </div>
