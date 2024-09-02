@@ -31,7 +31,7 @@ async function updateCategoryFilms(url, id, modalClassBtn, modalClassImg) {
 
     if (fiveFilms.results.length == 0){
         const p = document.createElement('p')
-        p.innerHTML = "Oups, désolé. Nous n'avons pas trouvé de résultats pour cette recherche. Veuillez sélectionner une autre catégorie."
+        p.innerHTML = "Oups ! Désolé, nous n'avons pas trouvé de résultats pour cette recherche. Veuillez sélectionner une autre catégorie."
         row.appendChild(p)
         row.nextElementSibling.children[0].classList.add("d-none") //Hide "Show More" Button
     } else {
@@ -138,6 +138,7 @@ function modalWindow() {
 }
 // --------------------------------------------------
 
+
 // SHOW MORE/SHOW LESS FUNCTION
 function toggleFilms(id) {
     let toggle = document.getElementById(id).parentElement;
@@ -192,9 +193,11 @@ document.addEventListener("DOMContentLoaded", async function()
     await updateCategoryFilms(secondCategoryUrl, 'secondCategoryRow', 'modalDetailsButton', 'modalDetailsImage')
 
     // Close button on modal
-    const closeModalBtn = document.getElementById("close-modal");
-    closeModalBtn.onclick = function() {
-        modal.style.display = "none";
+    const closeModalBtns = document.getElementsByClassName("close-modal");
+    for (closeBtn of closeModalBtns) {
+        closeBtn.addEventListener("click", function(){
+            modal.style.display = "none";
+        })
     }
 
     // Change films when dropdown item is clicked
