@@ -143,7 +143,7 @@ function modalWindow() {
 function toggleFilms(id) {
     let toggle = document.getElementById(id).parentElement;
     toggle.onclick = function () {
-        if (toggle.id == "unopenedToggle"){
+        if (toggle.classList.contains("unopenedToggle")){
             const myFilms = Array.from(toggle.previousElementSibling.children)
             myFilms.forEach((film, index) => {
                 if (index == 2 || index == 3){
@@ -156,9 +156,10 @@ function toggleFilms(id) {
                     film.classList.remove("d-lg-block")
                 }
             })
-            toggle.id = "openedToggle"
+            toggle.classList.add("openedToggle")
+            toggle.classList.remove("unopenedToggle")
             toggle.children[0].innerHTML = "Voir moins"
-        } else if (toggle.id == "openedToggle") {
+        } else if (toggle.classList.contains("openedToggle")) {
             const myFilms = Array.from(toggle.previousElementSibling.children)
             myFilms.forEach((film, index) => {
                 if (index == 2 || index == 3){
@@ -172,7 +173,8 @@ function toggleFilms(id) {
                 }
             })
             toggle.children[0].innerHTML = "Voir plus"
-            toggle.id = "unopenedToggle"
+            toggle.classList.add("unopenedToggle")
+            toggle.classList.remove("openedToggle")
         }
     }
 }
