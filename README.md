@@ -1,4 +1,4 @@
-#OC Movies API Interface
+# OC Movies API Interface
 
 ## Overview
 This project is a simple front-end application designed to interact with the OC Movies API. Built using HTML, Bootstrap, and vanilla JavaScript, this interface displays movie information, including titles, descriptions, and other relevant data sourced from the API.
